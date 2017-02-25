@@ -24,11 +24,11 @@ var botaoAdicionar = document.querySelector("#adicionar-paciente");
 
 function obtemPacienteDoFormulario(form) {
     var paciente = {
-        nome: form.nome.value,
-        peso: form.peso.value,
-        altura: form.altura.value,
-        gordura: form.gordura.value,
-        imc: calculaImc(form.peso.value, form.altura.value)
+        "nome"      : form.nome.value,
+        "peso"      : form.peso.value,
+        "altura"    : form.altura.value,
+        "gordura"   : form.gordura.value,
+        "imc"       : calculaImc(form.peso.value, form.altura.value)
     }
     return paciente;
 }
@@ -88,7 +88,7 @@ function exibeMensagensDeErro(erros) {
     var ul = document.querySelector("#mensagens-erro");
     ul.innerHTML = "";
 
-    erros.forEach(function(erro) {
+    erros.forEach((erro) => {
         var li = document.createElement("li");
         li.textContent = erro;
         ul.appendChild(li);
