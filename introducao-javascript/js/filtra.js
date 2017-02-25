@@ -1,11 +1,11 @@
 var campoFiltro = document.querySelector("#filtrar-tabela");
 
-campoFiltro.addEventListener("input", function() {
+campoFiltro.addEventListener("input", () => {
     var pacientes = document.querySelectorAll(".paciente");
 
     if (this.value.length > 0) {
 
-        pacientes.array.forEach(function(paciente) {
+        pacientes.array.forEach((paciente) => {
           var tdNome = paciente.querySelector(".info-nome");
           var nome = tdNome.textContent;
           var expressao = new RegExp(this.value, "i");
@@ -20,7 +20,7 @@ campoFiltro.addEventListener("input", function() {
 
     } else {
 
-        pacientes.array.forEach(function(paciente) {
+        pacientes.array.forEach((paciente) => {
             paciente.classList.remove("invisivel");
         });
         
