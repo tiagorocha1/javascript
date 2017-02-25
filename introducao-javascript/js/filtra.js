@@ -4,8 +4,8 @@ campoFiltro.addEventListener("input", function() {
     var pacientes = document.querySelectorAll(".paciente");
 
     if (this.value.length > 0) {
-      for (var i = 0; i < pacientes.length; i++) {
-          var paciente = pacientes[i];
+
+        pacientes.array.forEach(function(paciente) {
           var tdNome = paciente.querySelector(".info-nome");
           var nome = tdNome.textContent;
           var expressao = new RegExp(this.value, "i");
@@ -15,12 +15,15 @@ campoFiltro.addEventListener("input", function() {
           } else {
               paciente.classList.remove("invisivel");
           }
-      }
+            
+        });
+
     } else {
-        for (var i = 0; i < pacientes.length; i++) {
-            var paciente = pacientes[i];
+
+        pacientes.array.forEach(function(paciente) {
             paciente.classList.remove("invisivel");
-        }
+        });
+        
     }
 
 
