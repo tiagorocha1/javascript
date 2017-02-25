@@ -3,9 +3,7 @@ titulo.textContent = "Aparecida Nutricionista";
 
 var pacientes = document.querySelectorAll(".paciente");
 
-for (var i = 0; i < pacientes.length; i++) {
-
-    var paciente = pacientes[i];
+pacientes.forEach((paciente) => {
 
     var tdPeso = paciente.querySelector(".info-peso");
     var peso = tdPeso.textContent;
@@ -35,7 +33,8 @@ for (var i = 0; i < pacientes.length; i++) {
     if (pesoEhValido && alturaEhValida) {
         tdImc.textContent = calculaImc(peso,altura);
     }
-}
+    
+});
 
 function calculaImc(peso, altura){
     var imc = peso / (altura * altura)
